@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  outloook-s3-sync:
+    build: .
+    volumes:
+      - ./src:/usr/src/app:cached
+      - $HOME/.aws/credentials:/root/.aws/credentials:ro
+    env_file:
+      - ./.dev.env
+    command: tail -f /dev/null
