@@ -22,8 +22,9 @@ def main():
             if(server.folder_exists(config["processed_folder_name"]) != True):
                 server.create_folder(config["processed_folder_name"])
 
-            # print(email_from, email_subject, body)
-            # server.move(uid, config["processed_folder_name"])
+            server.move(uid, config["processed_folder_name"])
+
+            print("{} moved to {}".format(uid, config["processed_folder_name"]))
 
 if __name__ == "__main__":
     try:
